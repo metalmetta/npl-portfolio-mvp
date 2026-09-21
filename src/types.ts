@@ -20,8 +20,13 @@ export type PositionFields = {
   note: string;
 };
 
-export type BaseStatus = "da-estrarre" | "pronto" | "generato" | "esportato";
-export type RowStatus = BaseStatus | "da-validare";
+export type DocTypeId = "messa-in-mora" | "piano-di-pagamento" | "decreto";
+
+export type ReviewStatus = "in-revisione" | "approvato" | "rifiutato";
+
+export type BaseStatus = "caricato" | "generato" | "esportato";
+
+export type RowStatus = BaseStatus | ReviewStatus;
 
 export type PortfolioRow = {
   id: string;
@@ -30,11 +35,9 @@ export type PortfolioRow = {
   fields: PositionFields;
   conf: Confidence;
   draftText: string;
+  docType: DocTypeId | null;
+  review: ReviewStatus | null;
 };
-
-export type Issue = { key: string; label: string };
-
-export type DrawerState = { type: "mapping" | "preview"; id?: string };
 
 export type RawRow = {
   debitore: string;

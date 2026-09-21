@@ -1,8 +1,8 @@
 # npl-portfolio-mvp
 
-Interactive Lexroom NPL / debt-collection portfolio MVP: upload a demo book of positions, extract fields, generate decreto ingiuntivo drafts, validate, and export.
+Landing Lexroom per una fabbrica legale NPL / debt collection: carica un portafoglio, genera bozze (messa in mora, piano di pagamento, decreto), revisiona e esporta.
 
-This is a public landing-page MVP built from the attached React UI. It is a client-side demo (no backend, OCR, or persistence).
+Demo client-side (nessun backend). Il dataset demo apre 12 posizioni già compilate, con bozze dei tre tipi di atto pronte alla revisione umana.
 
 ## Prerequisites
 
@@ -17,23 +17,17 @@ npm install
 
 ## Run
 
-Start the Vite dev server:
-
 ```bash
 npm run dev
 ```
 
-Then open the URL printed in the terminal (typically `http://localhost:5173`).
+Apri l'URL stampato dal terminale (in genere `http://localhost:5173`).
 
 ## Build
-
-Production build:
 
 ```bash
 npm run build
 ```
-
-Preview the production build locally:
 
 ```bash
 npm run preview
