@@ -30,7 +30,7 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-4">
           <div>
             <div className="flex items-center gap-3">
-              <img src="/lexroom-logo.png" alt="Lexroom" className="h-6 w-auto" />
+              <img src="/lexroom-logo.svg" alt="Lexroom" className="h-6 w-auto" />
               <span className="h-5 w-px bg-slate-200" />
               <h1 className="font-serif text-xl text-slate-900">NPL / debt collection</h1>
             </div>

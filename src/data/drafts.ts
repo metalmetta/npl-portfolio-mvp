@@ -2,7 +2,7 @@ import type { DocTypeId, PortfolioRow } from "../types";
 
 export const BRAND = "#0F4C9D";
 
-export const BOOKING_URL = "https://calendar.app.google/XZfGdvvF3jZHKibW9";
+export const BOOKING_URL = "https://calendar.app.google/3cosca92hVUF1yUF8";
 
 export const LANDING_HOOK =
   "Fabbrica legale per NPL e debt collection: carica il portafoglio, genera le bozze, revisiona e esporta.";

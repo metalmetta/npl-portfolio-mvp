@@ -19,20 +19,20 @@ export function PortfolioTable({
   setReview: (id: string, review: import("../types").ReviewStatus) => void;
 }) {
   return (
-    <div className="overflow-x-auto rounded border border-slate-200 bg-white">
-      <table className="w-full min-w-[1180px] border-collapse text-left text-sm">
+    <div className="rounded border border-slate-200 bg-white">
+      <table className="w-full table-fixed border-collapse text-left text-xs">
         <thead>
           <tr className="border-b border-slate-200 bg-slate-50 text-xs text-slate-500">
-            <th className="px-3 py-2 font-medium">Stato</th>
-            <th className="px-3 py-2 font-medium">Tipo atto</th>
-            <th className="px-3 py-2 font-medium">Debitore</th>
-            <th className="px-3 py-2 font-medium">CF / P.IVA</th>
-            <th className="px-3 py-2 font-medium">Creditore</th>
-            <th className="px-3 py-2 font-medium">Importo</th>
-            <th className="px-3 py-2 font-medium">Scadenza</th>
-            <th className="px-3 py-2 font-medium">Titolo credito</th>
-            <th className="px-3 py-2 font-medium">Tribunale</th>
-            <th className="px-3 py-2 font-medium">Revisione</th>
+            <th className="px-1.5 py-2 font-medium">Stato</th>
+            <th className="px-1.5 py-2 font-medium">Tipo atto</th>
+            <th className="px-1.5 py-2 font-medium">Debitore</th>
+            <th className="px-1.5 py-2 font-medium">CF / P.IVA</th>
+            <th className="px-1.5 py-2 font-medium">Creditore</th>
+            <th className="px-1.5 py-2 font-medium">Importo</th>
+            <th className="px-1.5 py-2 font-medium">Scadenza</th>
+            <th className="px-1.5 py-2 font-medium">Titolo credito</th>
+            <th className="px-1.5 py-2 font-medium">Tribunale</th>
+            <th className="px-1.5 py-2 font-medium">Revisione</th>
           </tr>
         </thead>
         <tbody>
@@ -40,14 +40,14 @@ export function PortfolioTable({
             const status = derivedStatus(r);
             return (
               <tr key={r.id} className="border-b border-slate-100 align-top hover:bg-slate-50/60">
-                <td className="px-3 py-2">
+                <td className="px-1.5 py-2">
                   <StatusPill status={status} />
                 </td>
-                <td className="px-3 py-2">
+                <td className="px-1.5 py-2">
                   <select
                     value={r.docType ?? ""}
                     onChange={(e) => changeRowType(r.id, e.target.value as DocTypeId)}
-                    className="max-w-[11rem] rounded-sm border border-slate-200 bg-white px-1.5 py-1 text-xs text-slate-800"
+                    className="w-full max-w-full rounded-sm border border-slate-200 bg-white px-1.5 py-1 text-xs text-slate-800"
                   >
                     {DOC_TYPES.map((t) => (
                       <option key={t.id} value={t.id}>
@@ -56,13 +56,13 @@ export function PortfolioTable({
                     ))}
                   </select>
                 </td>
-                <td className="px-3 py-2">
-                  <span className="flex items-center text-sm text-slate-800">
-                    {r.fields.debitore}
+                <td className="px-1.5 py-2">
+                  <span className="flex min-w-0 items-center text-xs text-slate-800">
+                    <span className="truncate">{r.fields.debitore}</span>
                     <ConfDot level={r.conf.debitore} />
                   </span>
                 </td>
-                <td className="px-3 py-2">
+                <td className="px-1.5 py-2">
                   <FieldInput
                     value={r.fields.cf}
                     onChange={(v) => updateField(r.id, "cf", v)}
@@ -70,8 +70,8 @@ export function PortfolioTable({
                     placeholder="mancante"
                   />
                 </td>
-                <td className="px-3 py-2 text-sm text-slate-600">{r.fields.creditore}</td>
-                <td className="px-3 py-2">
+                <td className="px-1.5 py-2 text-xs text-slate-600 truncate">{r.fields.creditore}</td>
+                <td className="px-1.5 py-2">
                   <span className="flex items-center text-sm">
                     <FieldInput
                       value={r.fields.importo}
@@ -80,20 +80,20 @@ export function PortfolioTable({
                     <ConfDot level={r.conf.importo} />
                   </span>
                 </td>
-                <td className="px-3 py-2">
+                <td className="px-1.5 py-2">
                   <span className="flex items-center text-sm text-slate-700">
                     {r.fields.scadenza}
                     <ConfDot level={r.conf.scadenza} />
                   </span>
                 </td>
-                <td className="px-3 py-2">
+                <td className="px-1.5 py-2">
                   <FieldInput
                     value={r.fields.tipoTitolo}
                     onChange={(v) => updateField(r.id, "tipoTitolo", v)}
                     placeholder="assente"
                   />
                 </td>
-                <td className="px-3 py-2">
+                <td className="px-1.5 py-2">
                   <span className="flex items-center text-sm">
                     <FieldInput
                       value={r.fields.tribunale}
@@ -103,7 +103,7 @@ export function PortfolioTable({
                     <ConfDot level={r.conf.tribunale} />
                   </span>
                 </td>
-                <td className="px-3 py-2">
+                <td className="px-1.5 py-2">
                   {r.draftText ? (
                     <div className="flex flex-col gap-1">
                       <button
