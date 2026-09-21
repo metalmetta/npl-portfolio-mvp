@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { useState, useMemo, useEffect, useRef } from "react";
 import {
-  Upload, Sparkles, FileText, Info, LayoutTemplate, X, Eye, Copy, Download,
+  Upload, Sparkles, FileText, LayoutTemplate, X, Eye, Copy, Download,
   RotateCcw, CircleDot, CheckCircle2, AlertTriangle, ChevronRight,
 } from "lucide-react";
 import type { DrawerState, Issue, PortfolioRow, PositionFields, RowStatus } from "./types";
@@ -10,7 +10,7 @@ import {
   buildInitialRows, eur, formatMinutes, computeIssues, generateDraft,
   StatusPill, ConfDot, FieldInput,
 } from "./helpers";
-import { MetricCard, ProgressLine, WhyContent, MappingContent } from "./extras";
+import { MetricCard, ProgressLine, MappingContent } from "./extras";
 import { MainView } from "./Views";
 
 export default function App() {
@@ -217,7 +217,6 @@ export default function App() {
       Eye,
       FieldInput,
       FileText,
-      Info,
       LOGO_SRC,
       LayoutTemplate,
       MappingContent,
@@ -228,7 +227,6 @@ export default function App() {
       Sparkles,
       StatusPill,
       Upload,
-      WhyContent,
       X,
       activeBlockers,
       allExtracted,

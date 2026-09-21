@@ -1,18 +1,18 @@
 // @ts-nocheck
 import React from "react";
 import {
-  Upload, Sparkles, FileText, Info, LayoutTemplate, X, Eye, Copy, Download,
+  Upload, Sparkles, FileText, LayoutTemplate, X, Eye, Copy, Download,
   RotateCcw, CircleDot, CheckCircle2, AlertTriangle, ChevronRight,
 } from "lucide-react";
 import { LOGO_SRC, BRAND } from "./data";
 import { eur, formatMinutes, StatusPill, ConfDot, FieldInput } from "./helpers";
-import { MetricCard, ProgressLine, WhyContent, MappingContent } from "./extras";
+import { MetricCard, ProgressLine, MappingContent } from "./extras";
 
 export function ViewsBody({ p }: { p: any }) {
   const {
     AlertTriangle, BRAND, CheckCircle2, ChevronRight, CircleDot, ConfDot, Copy, Download,
-    Eye, FieldInput, FileText, Info, LOGO_SRC, LayoutTemplate, MappingContent, MetricCard,
-    ProgressLine, RotateCcw, STEPS, Sparkles, StatusPill, Upload, WhyContent, X,
+    Eye, FieldInput, FileText, LOGO_SRC, LayoutTemplate, MappingContent, MetricCard,
+    ProgressLine, RotateCcw, STEPS, Sparkles, StatusPill, Upload, X,
     activeBlockers, allExtracted, allGenerated, allLoaded, canExport, closeDrawer, copyDraft,
     currentStep, derivedStatus, dismissIssue, drawer, drawerOpen, eur, exportPackage, exported,
     extractIdx, extracting, formatMinutes, genIdx, generatedCount, generating, issuesMap,
@@ -33,9 +33,6 @@ export function ViewsBody({ p }: { p: any }) {
             <p className="mt-0.5 text-sm text-slate-500">Un portafoglio, n decreti pronti al deposito</p>
           </div>
           <div className="flex items-center gap-2">
-            <button onClick={() => openDrawer({ type: "why" })} className="inline-flex items-center gap-1.5 rounded-sm border border-slate-200 px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-50">
-              <Info className="h-3.5 w-3.5" /> Perché questo demo
-            </button>
             <button onClick={() => allLoaded && openDrawer({ type: "mapping" })} disabled={!allLoaded} className="inline-flex items-center gap-1.5 rounded-sm border border-slate-200 px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40">
               <LayoutTemplate className="h-3.5 w-3.5" /> Mappatura template
             </button>
@@ -184,11 +181,10 @@ export function ViewsBody({ p }: { p: any }) {
           <div className={`absolute inset-0 bg-slate-900/30 transition-opacity duration-200 ${drawerOpen ? "opacity-100" : "opacity-0"}`} onClick={closeDrawer} />
           <div className={`relative h-full w-full max-w-md overflow-y-auto bg-white shadow-xl transition-transform duration-200 ${drawerOpen ? "translate-x-0" : "translate-x-full"}`}>
             <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
-              <h3 className="font-serif text-base">{drawer.type === "why" && "Perché questo demo"}{drawer.type === "mapping" && "Mappatura template"}{drawer.type === "preview" && "Anteprima decreto"}</h3>
+              <h3 className="font-serif text-base">{drawer.type === "mapping" && "Mappatura template"}{drawer.type === "preview" && "Anteprima decreto"}</h3>
               <button onClick={closeDrawer} className="text-slate-400 hover:text-slate-700"><X className="h-4 w-4" /></button>
             </div>
             <div className="px-5 py-4">
-              {drawer.type === "why" && <WhyContent />}
               {drawer.type === "mapping" && <MappingContent />}
               {drawer.type === "preview" && previewRow && (
                 <div>

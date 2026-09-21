@@ -34,7 +34,7 @@ export type PortfolioRow = {
 
 export type Issue = { key: string; label: string };
 
-export type DrawerState = { type: "why" | "mapping" | "preview"; id?: string };
+export type DrawerState = { type: "mapping" | "preview"; id?: string };
 
 export type RawRow = {
   debitore: string;
